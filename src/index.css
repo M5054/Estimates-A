@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PDF Generation Styles */
+.generating-pdf {
+  background-color: white !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.generating-pdf * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+@media print {
+  .generating-pdf {
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Mobile PDF Optimization */
+@media (max-width: 768px) {
+  .generating-pdf {
+    padding: 10px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .generating-pdf table {
+    font-size: 0.85rem !important;
+  }
+
+  .generating-pdf th,
+  .generating-pdf td {
+    padding: 0.5rem !important;
+  }
+
+  .generating-pdf h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .generating-pdf h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .generating-pdf h3 {
+    font-size: 1.125rem !important;
+  }
+
+  .generating-pdf p {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Page Break Control */
+.page-break {
+  page-break-before: always;
+}
+
+/* Font Optimization */
+.generating-pdf {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
